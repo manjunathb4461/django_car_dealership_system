@@ -1,0 +1,12 @@
+{% for col in cols %}
+<li style="display: inline; text-align: center;"><strong><u>{{col}}</u></strong> ---</li>	
+{% endfor %}
+<br/>
+{% for instance in all_instances %}
+<a href="/main/{{table_name}}/{{instance.pk}}">{{instance}}</a></br>
+{% endfor %}
+
+<br/><br/>
+<a href="queries">start queries</a>
+<br/>
+<a href="add">add {{table_name}}</a>

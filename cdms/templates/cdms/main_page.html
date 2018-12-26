@@ -1,0 +1,6 @@
+<h2  style="font-family: bold">CHOOSE ONE OF THE FOLLOWING DISPLAYED TABLES TO SHOW THE DETAILS </h2>
+
+{% for table_name in all_tables %}
+<h3><a href="/main/{{table_name}}/">{{table_name}}</a></h3>
+{% endfor %}
+

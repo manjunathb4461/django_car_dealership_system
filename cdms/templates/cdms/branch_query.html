@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>project</title>
+	<style type="text/css">
+		#heading{
+			
+			width: 100%;
+			height: 100px;
+			background-color: red;
+		}
+		#select1{
+			width: 90px;
+			border: 2px solid black;
+		}
+	</style>
+</head>
+
+
+<body>
+
+
+<form action="{% url 'branch_query_disp'%}" method="post">
+    {% csrf_token %}
+    <h4>select a branch area and phone number</h4>
+    <select id="ddl" name="branch">to show the models sold from branch selected
+        <option value="">select some thing</option>
+        {% for branch in branchs %}
+        <option value="{{branch.area}}">{{branch}}</option>
+        {% endfor %}
+    </select>
+
+    <h4>select one to display branch with max or min number of cars sold</h4>
+    <select id="ddl2" name="maxmin">to select branch with max or min number of cars sold
+         <option value="">select some thing</option>
+        <option value="max">maximum</option>
+        <option value="min">minimum</option>
+    </select>
+
+    <input type="submit" value="search"></input>
+</form>
+
+
+</body>
+</html>

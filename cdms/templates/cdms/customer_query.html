@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>project</title>
+	<style type="text/css">
+		#heading{
+			
+			width: 100%;
+			height: 100px;
+			background-color: red;
+		}
+		#select1{
+			width: 90px;
+			border: 2px solid black;
+		}
+	</style>
+</head>
+
+
+<body>
+
+
+<form action="{% url 'cust_query_disp'%}" method="post">
+    {% csrf_token %}
+    <h4>select a customer</h4>
+    <select id="ddl" name="cust_name">
+        <option value="">select some thing</option>
+        {% for cust_name in customers %}
+        
+        <option value="{{cust_name.name}}">{{cust_name.name}}</option>
+        {% endfor %}
+    </select>
+    <br/><br/>
+    <input type="submit" value="search"></input>
+</form>
+
+
+</body>
+</html>
